@@ -5,7 +5,7 @@ import Router from './components/router/Router';
 function App() {
   return (
     <div>
-      <Navbar />
+      <Navbar name="Congress Organizer WebApplication" />
       <Router />
     </div>
   );

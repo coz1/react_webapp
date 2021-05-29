@@ -3,13 +3,17 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import React from 'react';
+import React, { useState } from 'react';
 import useStyles from './NavbarStyle'
 
+type Props = {
+  name: string;
+}
 
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<Props>= (props) => {
     const classes = useStyles();
+    const [login, setLogin] = useState("Login")
 
     return (
         <div className={classes.root}>
@@ -18,9 +22,9 @@ const Navbar: React.FC = () => {
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              Congress Organizer WebApplication
+              {props.name}
             </Typography>
-            <Button color="inherit">Login</Button>
+            <Button color="inherit">{login}</Button>
           </Toolbar>
         </AppBar>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, Redirect, Link } from 'react-router-dom';
-import CongressForm from '../forms/CongressForm';
+import CongressForm from '../forms/congress/CongressForm'
 
 
 const Router:React.FC = () => {
@@ -19,13 +19,14 @@ const Router:React.FC = () => {
             <Switch>
                 <Route exact path="/">
                     <h1>HomePage</h1>
-                    <CongressForm />
                 </Route>
                 <Route exact path="/login">
                     <h1>Login</h1>
                 </Route>
                 <Route exact path="/congress">
                     <h1>Congress</h1>
+                    <CongressForm />
+
                 </Route>
                 <Redirect to="/" />
             </Switch>

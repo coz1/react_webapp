@@ -6,6 +6,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import React, { useState } from 'react';
 import useStyles from './NavbarStyle'
+import LoginIcon from '@material-ui/icons/Login';
+import AddIcon from '@material-ui/icons/Add';
+import ListIcon from '@material-ui/icons/List';
+import { Link } from 'react-router-dom';
 
 type Props = {
   name: string;
@@ -26,7 +30,9 @@ const Navbar: React.FC<Props>= (props) => {
             <Typography variant="h6" className={classes.title}>
               {props.name}
             </Typography>
-            <Button color="inherit">{login}</Button>
+            <Button color="inherit" startIcon={<ListIcon/>}>Teilnehmer</Button>
+            <Button color="inherit" startIcon={<AddIcon/>}>create congress</Button>
+            <Button color="inherit" startIcon={<LoginIcon/>}>{login}</Button>
           </Toolbar>
         </AppBar>
       </div>
